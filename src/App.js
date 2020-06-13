@@ -17,6 +17,7 @@ class App extends Component {
       <div>
         <h1>Hello welcome to REACT JS</h1>
         <StateFull />
+        <h1>This is heading by the master</h1>
         <button onClick={this.handleLogin}>GetData</button>
         {this.props.data !== null && this.props.data.map(d => (
           <div className="my_card" key={d.id}>
