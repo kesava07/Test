@@ -16,7 +16,7 @@ class App extends Component {
     console.log(this.props.data);
     return (
       <div>
-        <h1>Hello welcome to REACT JS Application</h1>
+        <h1>Hello welcome to REACT JS App</h1>
         <StateFull />
         <StateLess />
         <h1>This is heading by the master</h1>
