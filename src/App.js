@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { handleLogin } from './Store/Actions/Login';
 import './App.css';
+import StateFull from './playground/StateFull';
 
 class App extends Component {
   state = {
@@ -15,6 +16,7 @@ class App extends Component {
     return (
       <div>
         <h1>Hello welcome to REACT JS</h1>
+        <StateFull />
         <button onClick={this.handleLogin}>GetData</button>
         {this.props.data !== null && this.props.data.map(d => (
           <div className="my_card" key={d.id}>
