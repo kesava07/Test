@@ -1,26 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { handleLogin } from './Store/Actions/Login';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    data: null
+  }
+  handleLogin = () => {
+    this.props.handleLogin();
+  }
+  render() {
+    console.log(this.props.data);
+    return (
+      <div>
+        <h1>Hello welcome to REACT JS</h1>
+        <button onClick={this.handleLogin}>GetData</button>
+        {this.props.data !== null && this.props.data.map(d => (
+          <div className="my_card" key={d.id}>
+            <span>{d.title}</span>
+          </div>
+        ))}
+      </div>
+    )
+  }
 }
 
-export default App;
+const mapStateToProps = (state) => ({
+  data: state.auth.user
+})
+
+export default connect(mapStateToProps, { handleLogin })(App);

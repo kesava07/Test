@@ -36,3 +36,10 @@
     transform: rotate(360deg);
   }
 }
+
+.my_card{
+  padding: 10px 20px;
+  box-shadow: 4px 3px 5px lightgrey;
+  margin: 10px 25px;
+  border: 1px solid lightgray;
+}
